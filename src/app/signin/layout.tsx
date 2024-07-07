@@ -16,7 +16,7 @@ const SigninLayout = ({ children, title = "로그인" }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        style={{ maxWidth: 720, margin: "auto" }}
+        style={{ maxWidth: 720, margin: "auto", height: "70vh" }}
         className="flex_justify_center"
       >
         {children}

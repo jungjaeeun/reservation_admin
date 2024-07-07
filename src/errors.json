@@ -1,0 +1,10 @@
+{
+  "INVALID_EMAIL_PASSWORD": {
+    "code": "INVALID_EMAIL_PASSWORD",
+    "message": "이메일 또는 비밀번호가 일치하지 않습니다"
+  },
+  "SERVER_ERROR": {
+    "code": "SERVER_ERROR",
+    "message": "서버 오류가 발생했습니다"
+  }
+}
