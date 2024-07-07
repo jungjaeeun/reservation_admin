@@ -22,7 +22,8 @@
       "@app/*": ["src/app/*"],
       "@styles/*": ["src/styles/*"],
       "@lib/*": ["lib/*"],
-      "@error": ["src/errors.json"]
+      "@error": ["src/errors.json"],
+      "@hoc/*": ["src/hoc/*"]
     },
     "baseUrl": "./"
   },

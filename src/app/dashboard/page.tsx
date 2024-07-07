@@ -1,8 +1,0 @@
-"use client";
-import React, { useEffect, useState } from "react";
-
-const DashboardPage = () => {
-  <div></div>;
-};
-
-export default DashboardPage;

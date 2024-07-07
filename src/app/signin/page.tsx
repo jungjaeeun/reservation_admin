@@ -20,7 +20,7 @@ const SigninPage = () => {
     if (storedEmail) {
       setEmail(storedEmail);
       setAutoLogin(true);
-      router.push("/dashboard");
+      router.push("/");
     }
   }, []);
 
@@ -35,19 +35,21 @@ const SigninPage = () => {
       });
       const { token, expiresIn } = response.data;
 
-      let tokenExpiry: any;
+      let tokenExpiredDate: any;
       if (expiresIn.endsWith("h")) {
         const hours = parseInt(expiresIn);
-        tokenExpiry = new Date(Date.now() + hours * 60 * 60 * 1000);
+        tokenExpiredDate = new Date(Date.now() + hours * 60 * 60 * 1000);
       } else if (expiresIn.endsWith("d")) {
         const days = parseInt(expiresIn);
-        tokenExpiry = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
+        tokenExpiredDate = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
       }
 
       sessionStorage.setItem("token", token);
-      sessionStorage.setItem("tokenExpiredDate", tokenExpiry.toISOString());
-
-      router.push("/dashboard");
+      sessionStorage.setItem(
+        "tokenExpiredDate",
+        tokenExpiredDate.toISOString()
+      );
+      router.push("/");
     } catch (error: any) {
       alert(error.response?.data.message);
       setEmail("");
