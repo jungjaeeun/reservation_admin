@@ -1,0 +1,33 @@
+.flex_justify_center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.m_0 {
+  margin: 0; }
+
+.m_t_4 {
+  margin-top: 4px; }
+
+.m_t_8 {
+  margin-top: 8px; }
+
+.m_t_12 {
+  margin-top: 12px; }
+
+.m_b_4 {
+  margin-bottom: 4px; }
+
+.m_b_8 {
+  margin-bottom: 8px; }
+
+.m_b_12 {
+  margin-bottom: 12px; }
+
+.txt_primary {
+  color: #007bff; }
+
+.form {
+  padding: 40px;
+  border-radius: 4px;
+  background-color: #f2f6ff; }
