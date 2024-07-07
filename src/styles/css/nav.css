@@ -1,0 +1,64 @@
+.navigation {
+  background-color: #2d4a69;
+  color: #fff;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1000; }
+  .navigation .profile {
+    display: flex;
+    align-items: center;
+    padding: 10px; }
+    .navigation .profile .profileImage {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover; }
+    .navigation .profile .profileName {
+      font-size: 16px;
+      font-weight: bold; }
+  .navigation .menu {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1; }
+    .navigation .menu .menuItem {
+      padding: 20px 18px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+      .navigation .menu .menuItem:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .navigation .menu .menuItem a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 10px;
+        font-size: 14px;
+        font-weight: bold; }
+      .navigation .menu .menuItem .icon {
+        margin-right: 10px;
+        font-size: 18px; }
+  .navigation .socialLinks {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc; }
+    .navigation .socialLinks a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      transition: opacity 0.3s ease; }
+      .navigation .socialLinks a:hover {
+        opacity: 0.8; }
