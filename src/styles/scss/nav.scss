@@ -13,6 +13,42 @@
   align-items: center;
   padding-top: 20px;
   z-index: 1000;
+  transition: width 0.3s ease;
+
+  &.collapsed {
+    width: 80px;
+
+    .profileName,
+    .toggleButton span,
+    .menuItem a span {
+      display: none;
+    }
+
+    .profileImage {
+      width: 30px;
+      height: 30px;
+    }
+
+    .menuItem {
+      justify-content: center;
+    }
+
+    .subMenu {
+      left: 80px;
+      width: 170px;
+    }
+  }
+
+  .toggleButton {
+    align-self: flex-end;
+    padding: 10px;
+    cursor: pointer;
+
+    .faChevronLeft,
+    .faChevronRight {
+      color: #fff;
+    }
+  }
 
   .profile {
     display: flex;
@@ -23,8 +59,12 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      margin-right: 10px;
       object-fit: cover;
+      margin-right: 12px;
+    }
+
+    .small_profile {
+      margin-right: 0;
     }
 
     .profileName {
@@ -47,22 +87,76 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.1);
       }
 
-      a {
+      a,
+      button,
+      span {
         color: #fff;
         text-decoration: none;
         margin-left: 10px;
         font-size: 14px;
         font-weight: bold;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
       }
 
       .icon {
         margin-right: 10px;
         font-size: 18px;
+      }
+
+      &.open .subMenu {
+        display: block;
+      }
+
+      .subMenu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 170px;
+        background-color: $nav-bar;
+        z-index: 1001;
+        border-radius: 0 4px 4px 0;
+        overflow: hidden;
+        transition: left 0.3s ease;
+
+        .subMenuItem {
+          padding: 10px 18px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+          }
+
+          .menuIcon {
+            margin-right: 10px;
+            font-size: 18px;
+          }
+        }
       }
     }
   }

@@ -1,11 +1,6 @@
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import { MenuItem } from "./types/type";
-import {
-  faUser,
-  faCalendar,
-  faCircleInfo,
-} from "@fortawesome/free-solid-svg-icons";
+import { menus } from "./constants/Menu";
 
 export default function RootLayout({
   children,
@@ -13,27 +8,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const isLoggedIn = true;
-  const menus: MenuItem[] = [
-    {
-      id: 0,
-      title: "회원관리",
-      iconClass: faUser,
-      link: "/members",
-    },
-    {
-      id: 1,
-      title: "예약관리",
-      iconClass: faCalendar,
-      link: "/reservations",
-    },
-    {
-      id: 2,
-      title: "고객센터",
-      iconClass: faCircleInfo,
-      link: "/center",
-    },
-  ];
-
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
