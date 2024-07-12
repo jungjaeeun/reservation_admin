@@ -13,7 +13,6 @@
   align-items: center;
   padding-top: 20px;
   z-index: 1000;
-  transition: width 0.3s ease;
 
   &.collapsed {
     width: 80px;
@@ -52,29 +51,6 @@
     .svg-inline--fa {
       height: 1rem;
       vertical-align: unset;
-    }
-  }
-
-  .profile {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-
-    .profileImage {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 12px;
-    }
-
-    .small_profile {
-      margin-right: 0;
-    }
-
-    .profileName {
-      font-size: 16px;
-      font-weight: bold;
     }
   }
 

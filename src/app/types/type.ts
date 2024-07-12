@@ -1,4 +1,5 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { ReactNode } from "react";
 
 export interface MenuItem {
   id: number;
@@ -9,7 +10,17 @@ export interface MenuItem {
 }
 
 export interface NavProps {
-  adminName: string;
-  adminImage: string;
   menus: MenuItem[];
+  isCollapsed: boolean;
+  onCollapseToggle: () => void;
+}
+
+export interface BoardItem {
+  id: number;
+  title: string;
+  subTitle?: string;
+  children?: ReactNode;
+  moreBtn?: boolean;
+  moreBtnLink?: string;
+  cls?: "block" | "half"; // 한줄을 가져갈 것인지, 한줄에 두개씩 나눌것인지
 }

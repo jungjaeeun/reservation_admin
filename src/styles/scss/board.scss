@@ -1,0 +1,21 @@
+@import "./color.scss";
+
+.dashboard-box {
+  background-color: $bg-color;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+
+  .title-area {
+    h5 {
+      margin: 0;
+    }
+  }
+}
+
+.block {
+  width: calc(100% - 40px);
+}
+.halk {
+  width: calc(50% - 40px);
+}

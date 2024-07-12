@@ -1,33 +1,9 @@
-@import "./color.scss";
+.dashboard-box {
+  background-color: #f2f6ff;
+  border-radius: 6px; }
 
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.block {
+  width: 100%; }
 
-  &.primary {
-    background-color: $primary;
-    color: white;
-
-    &:hover {
-      background-color: $primary-hover;
-    }
-  }
-
-  &.secondary {
-    background-color: $secondary;
-    color: white;
-
-    &:hover {
-      background-color: $secondary-hover;
-    }
-  }
-
-  &.block {
-    display: block;
-    width: 100%;
-  }
-}
+.halk {
+  width: 50%; }

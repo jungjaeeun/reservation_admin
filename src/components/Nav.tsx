@@ -1,10 +1,7 @@
-"use client";
-
-import React, { useState, useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { NavProps } from "@/app/types/type";
-import Button from "./button/Button";
 import "@styles/css/nav.css";
 
 import {
@@ -12,36 +9,20 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Nav: React.FC<NavProps> = ({ adminName, adminImage, menus }) => {
+const Nav: React.FC<NavProps> = ({ menus, isCollapsed, onCollapseToggle }) => {
   const [openMenuId, setOpenMenuId] = useState<number | null>(null);
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-
   const toggleSubMenu = useCallback((id: number) => {
     setOpenMenuId((prevOpenMenuId) => (prevOpenMenuId === id ? null : id));
   }, []);
-
   const toggleCollapse = useCallback(() => {
-    setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
-  }, []);
+    onCollapseToggle();
+  }, [onCollapseToggle]);
 
   return (
     <nav className={`navigation ${isCollapsed ? "collapsed" : ""}`}>
       <div className="toggleButton" onClick={toggleCollapse}>
         <FontAwesomeIcon icon={isCollapsed ? faChevronRight : faChevronLeft} />
       </div>
-      <div className="profile">
-        <img
-          src={adminImage}
-          className={`profileImage ${isCollapsed ? "small_profile" : ""}`}
-          alt="Profile"
-        />
-        <span className="profileName">{adminName}</span>
-      </div>
-      {!isCollapsed && (
-        <div style={{ width: "calc(100% - 30px)", marginBottom: 10 }}>
-          <Button block>로그아웃</Button>
-        </div>
-      )}
       <ul className="menu">
         {menus.map((menu) => (
           <li
