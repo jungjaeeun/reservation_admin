@@ -33,6 +33,9 @@
     .navigation .toggleButton .faChevronLeft,
     .navigation .toggleButton .faChevronRight {
       color: #fff; }
+    .navigation .toggleButton .svg-inline--fa {
+      height: 1rem;
+      vertical-align: unset; }
   .navigation .profile {
     display: flex;
     align-items: center;

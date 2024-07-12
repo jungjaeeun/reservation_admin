@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { NavProps } from "@/app/types/type";
@@ -16,13 +16,13 @@ const Nav: React.FC<NavProps> = ({ adminName, adminImage, menus }) => {
   const [openMenuId, setOpenMenuId] = useState<number | null>(null);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
-  const toggleSubMenu = (id: number) => {
-    setOpenMenuId(openMenuId === id ? null : id);
-  };
+  const toggleSubMenu = useCallback((id: number) => {
+    setOpenMenuId((prevOpenMenuId) => (prevOpenMenuId === id ? null : id));
+  }, []);
 
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
+  const toggleCollapse = useCallback(() => {
+    setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
+  }, []);
 
   return (
     <nav className={`navigation ${isCollapsed ? "collapsed" : ""}`}>
@@ -76,4 +76,4 @@ const Nav: React.FC<NavProps> = ({ adminName, adminImage, menus }) => {
   );
 };
 
-export default Nav;
+export default React.memo(Nav);
