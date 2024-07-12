@@ -20,9 +20,6 @@ const Nav: React.FC<NavProps> = ({ menus, isCollapsed, onCollapseToggle }) => {
 
   return (
     <nav className={`navigation ${isCollapsed ? "collapsed" : ""}`}>
-      <div className="toggleButton" onClick={toggleCollapse}>
-        <FontAwesomeIcon icon={isCollapsed ? faChevronRight : faChevronLeft} />
-      </div>
       <ul className="menu">
         {menus.map((menu) => (
           <li
@@ -53,6 +50,9 @@ const Nav: React.FC<NavProps> = ({ menus, isCollapsed, onCollapseToggle }) => {
           </li>
         ))}
       </ul>
+      <div className="toggleButton" onClick={toggleCollapse}>
+        <FontAwesomeIcon icon={isCollapsed ? faChevronRight : faChevronLeft} />
+      </div>
     </nav>
   );
 };

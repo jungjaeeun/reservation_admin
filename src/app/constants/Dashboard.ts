@@ -16,6 +16,7 @@ export const dashboards: BoardItem[] = [
     moreBtn: true,
     moreBtnLink: "/reservations",
     cls: "half",
+    m_r: 10,
   },
   {
     id: 2,

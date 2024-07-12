@@ -27,6 +27,7 @@ export default function RootLayout({
           />
         )}
         <div style={{ paddingLeft: `${isNavCollapsed ? "80px" : "250px"}` }}>
+          <h2>대시보드</h2>
           {children}
         </div>
         {isLoggedIn && <Footer />}

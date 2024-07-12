@@ -22,5 +22,6 @@ export interface BoardItem {
   children?: ReactNode;
   moreBtn?: boolean;
   moreBtnLink?: string;
-  cls?: "block" | "half"; // 한줄을 가져갈 것인지, 한줄에 두개씩 나눌것인지
+  cls?: "block" | "half"; // 한줄을 가져갈 것인지, 한줄에 두개씩 나눌것인지,
+  m_r?: number; // margin right
 }
