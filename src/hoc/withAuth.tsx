@@ -8,9 +8,9 @@ const withAuth = (WrappedComponent: React.FC) => {
     const router = useRouter();
 
     useEffect(() => {
-      const token = sessionStorage.getItem("token");
+      const token = localStorage.getItem("token");
       const tokenExpiredDate = new Date(
-        sessionStorage.getItem("tokenExpiredDate") || ""
+        localStorage.getItem("tokenExpiredDate") || ""
       );
 
       if (!token || !tokenExpiredDate || tokenExpiredDate <= new Date()) {

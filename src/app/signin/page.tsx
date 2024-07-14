@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import SigninLayout from "./layout";
 import Button from "@/components/button/Button";
@@ -8,21 +8,14 @@ import Input from "@/components/input/Input";
 import Checkbox from "@/components/input/Checkbox";
 import { useRouter } from "next/navigation";
 import "@styles/css/common.css";
+import { useAuth } from "@/hoc/AuthContext";
 
 const SigninPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [autoLogin, setAutoLogin] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    const storedEmail = sessionStorage.getItem("token");
-    if (storedEmail) {
-      setEmail(storedEmail);
-      setAutoLogin(true);
-      router.push("/");
-    }
-  }, []);
+  const { login } = useAuth();
 
   const handleSignin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,20 +28,7 @@ const SigninPage = () => {
       });
       const { token, expiresIn } = response.data;
 
-      let tokenExpiredDate: any;
-      if (expiresIn.endsWith("h")) {
-        const hours = parseInt(expiresIn);
-        tokenExpiredDate = new Date(Date.now() + hours * 60 * 60 * 1000);
-      } else if (expiresIn.endsWith("d")) {
-        const days = parseInt(expiresIn);
-        tokenExpiredDate = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
-      }
-
-      sessionStorage.setItem("token", token);
-      sessionStorage.setItem(
-        "tokenExpiredDate",
-        tokenExpiredDate.toISOString()
-      );
+      login(token, expiresIn);
       router.push("/");
     } catch (error: any) {
       alert(error.response?.data.message);
