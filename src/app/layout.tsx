@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { menus } from "./constants/Menu";
 import { AuthProvider, useAuth } from "@hoc/AuthContext";
+import Head from "next/head";
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoggedIn, isLoading } = useAuth();
@@ -48,6 +49,11 @@ export default function App({ children }: { children: React.ReactNode }) {
   return (
     <AuthProvider>
       <html lang="en">
+        <Head>
+          <title>admin</title>
+          <meta name="description" content="Login" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <body style={{ margin: 0 }}>
           <RootLayout>{children}</RootLayout>
         </body>

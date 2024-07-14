@@ -16,18 +16,7 @@
   &.collapsed {
     width: 80px;
 
-    .profileName,
-    .toggleButton span,
-    .menuItem a span {
-      display: none;
-    }
-
-    .profileImage {
-      width: 30px;
-      height: 30px;
-    }
-
-    .menuItem {
+    .menuItem button {
       justify-content: center;
     }
 
@@ -62,7 +51,7 @@
     padding-top: 20px;
 
     .menuItem {
-      padding: 20px 18px;
+      // padding: 20px 18px;
       display: flex;
       align-items: center;
       cursor: pointer;
@@ -86,6 +75,7 @@
         border: none;
         display: flex;
         align-items: center;
+        width: 100%;
       }
 
       .icon {
@@ -131,6 +121,7 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+            width: 100%;
           }
 
           .menuIcon {
@@ -138,26 +129,6 @@
             font-size: 18px;
           }
         }
-      }
-    }
-  }
-
-  .socialLinks {
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid $gray1;
-
-    a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 16px;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 0.8;
       }
     }
   }

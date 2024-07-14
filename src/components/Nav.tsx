@@ -25,19 +25,24 @@ const Nav: React.FC<NavProps> = ({ menus, isCollapsed, onCollapseToggle }) => {
           <li
             key={menu.id}
             className={`menuItem ${openMenuId === menu.id ? "open" : ""}`}
-            onClick={() => menu.subMenus && toggleSubMenu(menu.id)}
           >
-            <FontAwesomeIcon
-              icon={menu.iconClass as unknown as IconDefinition}
-              className="menuIcon"
-              style={{ width: 20, height: 20 }}
-            />
-            {!isCollapsed &&
-              (menu.link ? (
-                <a href={menu.link}>{menu.title}</a>
-              ) : (
-                <span>{menu.title}</span>
-              ))}
+            <button
+              onClick={() => menu.subMenus && toggleSubMenu(menu.id)}
+              style={{ padding: "20px 18px", margin: 0 }}
+            >
+              <FontAwesomeIcon
+                icon={menu.iconClass as unknown as IconDefinition}
+                className="menuIcon"
+                style={{ width: 20, height: 20 }}
+              />
+              {!isCollapsed &&
+                (menu.link ? (
+                  <a href={menu.link}>{menu.title}</a>
+                ) : (
+                  <span>{menu.title}</span>
+                ))}
+            </button>
+
             {menu.subMenus && (
               <ul className="subMenu">
                 {menu.subMenus.map((subMenu) => (

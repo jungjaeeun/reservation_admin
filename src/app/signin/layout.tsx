@@ -7,14 +7,9 @@ type Props = {
   title?: string;
 };
 
-const SigninLayout = ({ children, title = "로그인" }: Props) => {
+const SigninLayout = ({ children }: Props) => {
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content="Login" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main
         style={{ maxWidth: 720, margin: "auto", height: "70vh" }}
         className="flex_justify_center"
